@@ -15,6 +15,9 @@ const Navbar = () => {
     const [click, setClick] = useState(false)
     const handleClick = () => setClick(!click)
 
+    // close mobile menu
+    const closeMobileMenu = () => setClick(false)
+
     // for signup button 
     const [button, setButton] = useState(true)
     const showButton = () => {
@@ -36,7 +39,7 @@ const Navbar = () => {
             <IconContext.Provider value={{ color: '#fff' }}>
                 <Nav>
                     <NavbarContainer>
-                        <NavLogo to="/">
+                        <NavLogo to="/" onClick={closeMobileMenu}>
                             <NavIcon />
                             ULTRA
                         </NavLogo>
